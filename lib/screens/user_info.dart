@@ -77,8 +77,8 @@ class _UserInfoState extends State<UserInfo> {
                                         shape: BoxShape.circle,
                                         image: DecorationImage(
                                           fit: BoxFit.fill,
-                                          image: NetworkImage(
-                                              'https://cdn1.vectorstock.com/i/thumb-large/62/60/default-avatar-photo-placeholder-profile-image-vector-21666260.jpg'),
+                                          image: AssetImage(
+                                              'images/avatar.jpg'),
                                         ),
                                       ),
                                     ),
@@ -97,8 +97,8 @@ class _UserInfoState extends State<UserInfo> {
                             ],
                           ),
                           background: Image(
-                            image: NetworkImage(
-                                'https://cdn1.vectorstock.com/i/thumb-large/62/60/default-avatar-photo-placeholder-profile-image-vector-21666260.jpg'),
+                            image: AssetImage(
+                                'images/avatar.jpg'),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -117,14 +117,10 @@ class _UserInfoState extends State<UserInfo> {
                       thickness: 1,
                       color: Colors.grey,
                     ),
-                    userListTile('Email', 'Email sub', 0, context),
-                    userListTile('Email', 'Email sub', 0, context),
-                    userListTile('Email', 'Email sub', 0, context),
-                    userListTile('Email', 'Email sub', 0, context),
-                    userListTile('Email', 'Email sub', 0, context),
-                    userListTile('Phone number', '4555', 0, context),
-                    userListTile('Shipping address', '', 0, context),
-                    userListTile('joined date', 'date', 0, context),
+                    userListTile('Email', 'Email here', 0, context),
+                    userListTile('Phone number', '_phoneNumber', 1, context),
+                    userListTile('Shipping address', '', 2, context),
+                    userListTile('joined date', '20.2.2021', 3, context),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: userTitle('User settings'),
