@@ -1,7 +1,9 @@
 import 'package:ecommerceapp/consts/colors.dart';
+import 'package:ecommerceapp/provider/dark_theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:list_tile_switch/list_tile_switch.dart';
+import 'package:provider/provider.dart';
 
 class UserInfo extends StatefulWidget {
   @override
@@ -9,7 +11,7 @@ class UserInfo extends StatefulWidget {
 }
 
 class _UserInfoState extends State<UserInfo> {
-  bool _value = false;
+
   ScrollController _scrollController;
   var top = 0.0;
   @override
@@ -23,6 +25,7 @@ class _UserInfoState extends State<UserInfo> {
   }
   @override
   Widget build(BuildContext context) {
+    final themeChange = Provider.of<DarkThemeProvider>(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -117,9 +120,9 @@ class _UserInfoState extends State<UserInfo> {
                       thickness: 1,
                       color: Colors.grey,
                     ),
-                    userListTile('Email', 'Email here', 0, context),
-                    userListTile('Phone number', '_phoneNumber', 1, context),
-                    userListTile('Shipping address', '', 2, context),
+                    userListTile('Email', 'Rikoairlan@gmail.com', 0, context),
+                    userListTile('Phone number', '08990761528', 1, context),
+                    userListTile('Shipping address', 'jl.blok duku no. 21', 2, context),
                     userListTile('joined date', '20.2.2021', 3, context),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
@@ -130,11 +133,11 @@ class _UserInfoState extends State<UserInfo> {
                       color: Colors.grey,
                     ),
                     ListTileSwitch(
-                      value: _value,
+                      value: themeChange.darkTheme,
                       leading: Icon(Ionicons.md_moon),
                       onChanged: (value) {
                         setState(() {
-                          _value = value;
+                          themeChange.darkTheme = value;
                         });
                       },
                       visualDensity: VisualDensity.comfortable,
