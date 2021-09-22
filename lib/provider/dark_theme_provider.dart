@@ -1,6 +1,8 @@
+import 'package:ecommerceapp/models/dark_theme_preferences.dart';
 import 'package:flutter/material.dart';
 
 class DarkThemeProvider with ChangeNotifier {
+  DarkThemePreferences darkThemePreferences = DarkThemePreferences();
 
   bool _darkTheme = false;
 
@@ -8,6 +10,7 @@ class DarkThemeProvider with ChangeNotifier {
 
   set darkTheme(bool value) {
     _darkTheme = value;
+    darkThemePreferences.serDarkTheme(value);
     notifyListeners();
   }
 }

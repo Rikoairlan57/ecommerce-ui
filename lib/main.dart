@@ -16,6 +16,17 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   DarkThemeProvider themeChangeProvider = DarkThemeProvider();
 
+  void getCurrentAppTheme() async {
+    themeChangeProvider.darkTheme =
+        await themeChangeProvider.darkThemePreferences.getTheme();
+  }
+
+  @override
+  void initState() {
+    getCurrentAppTheme();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -25,7 +36,7 @@ class _MyAppState extends State<MyApp> {
           })
         ],
         child:
-        Consumer<DarkThemeProvider>(builder: (context, themeData, child) {
+            Consumer<DarkThemeProvider>(builder: (context, themeData, child) {
           return MaterialApp(
             title: 'Flutter Demo',
             theme: Styles.themeData(themeChangeProvider.darkTheme, context),
