@@ -81,7 +81,7 @@ class _UserInfoState extends State<UserInfo> {
                                         image: DecorationImage(
                                           fit: BoxFit.fill,
                                           image: AssetImage(
-                                              'images/avatar.jpg'),
+                                              'assets/images/avatar.jpg'),
                                         ),
                                       ),
                                     ),
@@ -101,7 +101,7 @@ class _UserInfoState extends State<UserInfo> {
                           ),
                           background: Image(
                             image: AssetImage(
-                                'images/avatar.jpg'),
+                                'assets/images/avatar.jpg'),
                             fit: BoxFit.fill,
                           ),
                         ),
